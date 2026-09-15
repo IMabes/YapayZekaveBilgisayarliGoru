@@ -1,0 +1,80 @@
+Benzerlik Algoritmaları Nedir?
+
+ Kümeler veya veriler arasında benzerlik kurabilen, benzerlik oranlarını hesaplayabilen algoritmalardır.
+
+<=== Levensthein Mesafesi Benzerlik Algoritması Nedir? ===>
+
+ A cümlesini, B cümlesine çevirebilmek için gereken işlem sayısıdır. İşlem sayısı arttıkça, benzerlik azalacaktır. Yani Ters orantılıdır.
+ - Eleman silme
+ - Eleman değiştirme
+ - Eleman ekleme
+
+
+<=== Vektör Uzay Benzerlik Algoritması Nedir? ===>
+
+ Çok parametreli verileri görselleştirmek, anlamlı geometrik yorumlar yapabilmek ve kümeleyebilmek için sıklıkla tercih edilirler. Veriler arasında benzerlik kurmak için sıralı dizilere  ihtiyaç duymaz. Kıyaslanacak elemanlar aynı parametre sayısına sahip olmalıdır. Vektör uzay benzerliği uygulayabilmek için tüm noktalar üzerinde bir normalizasyon işlemi uygulamamız   gerekir. Normalizasyon kullanacağımızda birim çember üzerinde işlem yapmamız gerekir.
+ İnsanA = (boy1, kilo1) = (180, 90)
+ İnsanB = (boy2, kilo2) = (170 ,80)
+ Öklid teoremi kullanarak  |AB| = Kok13 bulunur.
+
+ boy / ((max_boy - min_boy) / 100)
+ kilo / ((max_kilo - min_kilo) / 100)
+
+ InsanAboy =  180 / ((200 - 100) / 100) => 0.90
+ InsanAkilo =  90 / ((100 - 50) / 100) => 0.45
+ A(0.90, 0.45)
+
+
+<== Kosinüs Benzerlik Algoritması ==>
+
+ Kosinüs Benzerliği modellemesinde metinler birer vektör olarak ele alınır. Temel prensipte iki doküman arasındaki ilişki; bu dokümanların vektörlerinin analitik uzayda birbirlerine göre yaptığı açı ile ifade edilir. Kullanım alanı çok geniş olsada en çok doğal dil işlemede tercih edilir.
+
+
+
+<=== Similarity Fonksiyonu ===>
+
+ model.similarity() fonksiyonu, iki kelime arasındaki benzerlik oranını hesaplar. Bu oran 0 ile 1 arasında bir değer alır. 1'e yakın değerler, kelimelerin birbirine daha yakın olduğun gösterir.
+
+
+<=== Most Similiar Fonksiyonu ===>
+
+ model.most_similar() fonksiyonu, verilen bir kelimeye en yakın kelimeleri ve benzerlik oranlarını döndürür. Örneğin çay kelimesini kullanırsak fındık, kahve, süt gibi kelimeler dönebilir.
+
+
+<=== Pozlamalı "Most Similiar" Fonksiyonu ===>
+
+ Pozlamalı "Most Similar" (model.most_similar(positive=[])) fonksiyonu, bir kelimeye benzer kelimeleri bulmak için kullanılabilir. Bu fonksiyon, verilen kelimelere pozitif ağırlıklar ekleyerek veya çıkararak, daha anlamlı sonuçlar elde etmeyi sağlar. Örneğin, "dal", "kök" ve "yaprak" kelimelerine en yakın kelimeleri bulmak için kullanılabilir.
+
+
+<=== Doesnt Match Fonksiyonu ===>
+
+ model.doesnt_match() fonksiyonu, verilen kelimeler arasından en az benzer olan kelimeyi döndürür. Bu fonksiyon, bir kelimeye anlamsal bağlantılar ekleyerek veya çıkararak başka bir kelime vektörüne yakınlığı tespit etmeyi sağlar. Örneğin, çay, kahve, fincan ve insan kelimeleri arasından en az benzer olan kelimeyi bulmak için kullanılabilir.
+
+
+
+<=== WM Mesafesi Algoritması ile Cümle Benzerliği Fonksiyonu ===>
+
+ WM (Word Mover's Distance) mesafesi fonksiyonu, iki cümle arasındaki benzerliği ölçmek için kullanılır. Bu fonksiyon, cümlelerdeki kelimelerin vektörlerini kullanarak, bir cümlenin diğerine ne kadar "taşınması" gerektiğini hesaplar. Bu mesafe ne kadar küçükse, cümleler o kadar benzerdir.
+
+
+!=== Cümle Benzerliğini Daha Yüksek Başarı İle Hesaplayalım ===!
+
+ Kosinüs benzerliği modeli ile birlikte Word2Vec benzerliği modellerini bir arada kullanırsak doğruluğu daha yüksek model elde edebiliriz.
+ Word2Vec modeli hassas (soft) kosinüs benzerliğidir.
+ Kosinüs benzerliğinin amacı veriyi vektöre çevirmek değildir.
+ Veriyi vektöre çevirmek için birçok algoritma ve hatta kütüphane mevcuttur.
+ Kosinüs benzerliğinin amacı; vektörize edilmiş veriler arasındaki benzerlik oranını hesaplamaktır.
+
+
+<=== Matris Benzerliği Algoritması ===>
+
+ Matris benzerliği, genellikle iki ayrı görselin benzerlik oranını kıyaslamada tercih edilen ilkel, basit ancak hafif bir algoritmadır
+
+<=== Toleranslı Benzerlik Algoritması ===>
+
+ Toleranslı Benzerlik algoritmaları, iki veri kümesi, metin, grafik veya nesne arasındaki benzerliği hesaplarken birebir eşleşme yerine belirli bir hata payını (toleransı) kabul eden sistemlerdir. Klasik algoritmalar "ya hep ya hiç" mantığıyla çalışırken, bu algoritmalar verideki gürültüleri, yazım hatalarını veya eksiklikleri esneterek gerçeğe en yakın eşleşmeyi bulmayı hedefler.
+
+
+<=== Tanimoto Benzerlik Algoritması ===>
+
+ Tanimoto benzerlik algoritması (Jaccard-Tanimoto katsayısı olarak da bilinir), iki küme veya iki ikili (binary) vektör arasındaki örtüşmeyi, kesişim alanlarının birleşim alanlarına oranıyla ölçen bir benzerlik metriğidir. [Tanimoto = Ortak Eleman Sayısı / Toplam Benzersiz Eleman Sayısı]

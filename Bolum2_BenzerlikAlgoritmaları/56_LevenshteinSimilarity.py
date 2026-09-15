@@ -70,6 +70,7 @@ mesafe = LevenshteinMesafesi(kelime_1,kelime_2)
 print("'" + kelime_1 + "' ve '" + kelime_2 + "' arasındaki Levenshtein Mesafesi: ")
 print(mesafe)
 
+
 benzerlik_oran = (max_len - mesafe)/max_len
 print("Benzerlik Oranı: ")
 print(benzerlik_oran)

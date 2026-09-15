@@ -13,7 +13,7 @@ def stopWord(kelime):
         else:
             flag = False
     return flag
-# Fonksiyon kelimemizim stopWords dizisinde olup olmadığını kontrol eder.
+# Fonksiyon kelimemizin stopWords dizisinde olup olmadığını kontrol eder.
 
 
 def ara(dizi,kelime):
